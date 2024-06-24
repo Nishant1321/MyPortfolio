@@ -1,0 +1,424 @@
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+nav h1 {
+    font-size: 1.8em;
+    color: #ff9900;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.3s; }
+nav ul li:nth-child(2) { animation-delay: 0.6s; }
+nav ul li:nth-child(3) { animation-delay: 0.9s; }
+nav ul li:nth-child(4) { animation-delay: 1.2s; }
+nav ul li:nth-child(5) { animation-delay: 1.5s; }
+
+nav ul li a {
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+.hire-me {
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 1.8s;
+}
+
+.hire-me:hover {
+    background-color: #cc7a00;
+}
+
+/* Main Styles */
+main {
+    padding-top: 100px;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(to right, #e0f7fa, #fffde7);
+    transform-style: preserve-3d;
+}
+
+.intro-text {
+    max-width: 50%;
+    opacity: 0;
+    transform: translateX(-50px) rotateY(-15deg);
+    animation: slideInLeft 1s forwards, rotateYin 1s forwards;
+}
+
+.intro-image {
+    opacity: 0;
+    transform: translateX(50px) rotateY(15deg);
+    animation: slideInRight 1s forwards, rotateYin 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.intro-text h2 {
+    font-size: 2.5em;
+    color: #ff9900;
+}
+
+.intro-text h3 {
+    font-size: 1.8em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.intro-text p {
+     font-size: 2.5em;
+    color: #ff9900;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons .hire-me, .buttons .resume {
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.buttons .resume {
+        background-color: #ff9900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 1.8s;
+}
+
+.buttons .hire-me:hover, .buttons .resume:hover {
+    transform: scale(1.1) rotateZ(10deg);
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2) rotateZ(10deg);
+}
+
+.intro-image img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    padding: 50px 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff9900;
+}
+
+section p, section ul {
+    font-size: 1.2em;
+    color: #555;
+}
+
+.contact-form {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #cc7a00;
+}
+
+/* Keyframes for Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateYin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+/* General form styling */
+form {
+    max-width: 1000px; /* Increase max-width for larger screens */
+    margin: 0 auto;
+    padding: 40px; /* Increase padding for more spacing */
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+}
+
+/* Label styling */
+form label {
+    display: block;
+    margin-bottom: 15px; /* Slightly increased margin */
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Input and textarea styling */
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 12px; /* Increased padding for input fields */
+    margin-bottom: 25px; /* Increased margin-bottom for more spacing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Placeholder text styling */
+form input::placeholder,
+form textarea::placeholder {
+    color: #aaa;
+}
+
+/* Button styling */
+form button[type="submit"] {
+    display: inline-block;
+    padding: 12px 24px; /* Increased padding for button */
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #cc7a00;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    perspective: 1000px;
+    animation: fadeInUp 1s forwards;
+}
+
+footer h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff9900;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #ff9900;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* 3D Animation for Footer */
+footer::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    transform: translateX(-50%) translateY(100%) rotateX(75deg);
+    animation: rotate 15s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: translateX(-50%) translateY(100%) rotateX(75deg) rotate(0deg);
+    }
+    to {
+        transform: translateX(-50%) translateY(100%) rotateX(75deg) rotate(360deg);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
