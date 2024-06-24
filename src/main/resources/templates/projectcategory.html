@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/projectcate.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <!-- Sidebar -->
+  <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="/admindashboard">Home Category</a>
+        <a href="/projectlist">Add Project Category</a>
+        
+        <a href="/contactuslist">User Form Category</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+    
+      
+       <button><a th:href="@{/Allproject}">Add Project</a></button><br><br>
+      
+       <table>
+<thead>
+<th>Id</th><br>
+<th>Project Title</th><br>
+<th>Project Type</th><br>
+<th>Position</th><br>
+<th>Start Date</th><br>
+<th>Complition Date</th><br>
+<th>Description</th>
+
+<tbody>
+<tr th:each="project :${projectlist}">
+<td th:text="${project.id}">Id</td>
+<td th:text="${project.projecttitle}">Project Title</td>
+<td th:text="${project.projecttype}">Project Type</td>
+<td th:text="${project.position}">Position</td>
+<td th:text="${project.startdate}">Start Date</td>
+<td th:text="${project.complitiondate}">Complition Date</td>
+<td th:text="${project.Description}">Description</td>
+
+
+<td>
+<form th:action="@{/project/delete}" method="POST">
+<input type="hidden" name="id" th:value="${project.id}">
+<button type="submit">delete</button>
+</form>
+</td>
+<td>
+<form th:action="@{/project/edit}" method="get">
+<input type="hidden" name="id" th:value="${project.id}">
+<button type="submit">Edit</button>
+
+</form>
+</td>
+</tr>
+</tbody>
+</thead>
+</table>     
+   
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

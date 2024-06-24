@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="css/projects.css">
+</head>
+<body>
+   <header>
+  <nav>
+      <h1>Java Full Stack.</h1>
+           
+                <a href="/index">Home</a>
+                
+                <a href="/project">Projects</a>
+                <a href="pdf/Nishant.Resume.pdf">Resume</a>
+              
+              
+            
+            <div class="multilingual">
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+           <button class="hire-me"><a href="/hireme">Hire Me</a></button>
+           
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h2>Hello, I'm Java Full Stack Developer</h2>
+                <h3>Freelancer</h3>
+                <p>Crafting seamless solutions from front-end elegance to back-end brilliance.</p>
+                <div class="buttons">
+                 <button class="hire-me"><a href="/hireme">Hire Me</a></button>
+                    <button class="resume"><a href="pdf/Nishant.Resume.pdf">Resume</a></button>
+                </div>
+                <div class="social-icons">
+                           <a href="https://www.linkedin.com/in/nishant-ingawale-a1902422a/"><img src="icons/linkedin.webp" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/mr_nishant_1308/"><img src="icons/insta.jpg" alt="Instagram"></a>
+                    <a href="https://github.com/Nishant1321"><img src="icons/github.jpg" alt="GitHub"></a>
+                    <a href="https://www.facebook.com/nishant.ingawale/"><img src="icons/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="intro-image">
+                <img src="image/WhatsApp Image 2024-06-17 at 9.58.48 AM.jpeg" alt="Web Dev">
+            </div>
+        </section>
+    </main>
+    
+        <h2>Projects</h2>
+        
+        <div th:each="project : ${projectlist}" class="project">
+            <p  th:text=" ${project.projecttitle}+' | ' + ${project.projecttype}"></p>
+            <p th:text="${project.startdate} + ' – ' + ${project.complitiondate} + ' | ' + ${project.position}"></p>
+            <p th:text="${project.description}"></p>
+        </div>
+    
+    
+</body>
+<footer>
+    <h2>Contact</h2>
+    <ul>
+        <li>Email: <a href="mailto:nishantingawale13@gmail.com">nishantingawale13@gmail.com</a></li>
+        <li>Contact Number: 9359248942</li>
+    </ul>
+   
+</footer>
+
+</html>

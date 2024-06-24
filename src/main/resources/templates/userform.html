@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/userform.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>Admin Dashboard</h1>
+    </header>
+
+    <!-- Sidebar -->
+ <div class="sidebar">
+        <h2>Navigation</h2>
+        <a href="/admindashboard">Home Category</a>
+        <a href="/projectlist">Add Project Category</a>
+       
+        <a href="/contactuslist">User Form Category</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Content -->
+    
+      
+       
+      
+       <table>
+<thead>
+<th>Id</th><br>
+<th>Name</th><br>
+<th>Email</th><br>
+<th>Subject</th><br>
+<th>Message</th><br>
+
+
+<tbody>
+<tr th:each="contact :${contactlist}">
+<td th:text="${contact.id}">Id</td>
+<td th:text="${contact.name}">Name</td>
+<td th:text="${contact.email}">Email</td>
+<td th:text="${contact.subject}">Subject</td>
+<td th:text="${contact.message}">Message</td>
+
+
+
+<td>
+<form th:action="@{/contact/delete}" method="POST">
+<input type="hidden" name="id" th:value="${contact.id}">
+<button type="submit">delete</button>
+</form>
+</td>
+
+</tr>
+</tbody>
+</thead>
+</table>     
+   
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Admin Dashboard. All rights reserved.</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

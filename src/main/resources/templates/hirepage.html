@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/hirepage.css">
+</head>
+<body>
+
+ <header>
+        <nav>
+            <h1>Java Full Stack.</h1>
+           
+                 <a href="/index">Home</a>
+               
+                <a href="/project">Projects</a>
+                <a href="pdf/Nishant.Resume.pdf">Resume</a>
+         
+            
+            <div class="multilingual">
+                <div id="google_translate_element"></div>
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </div>
+            <button class="hire-me">Hire Me</button>
+        </nav>
+    </header>
+    <main>
+    <section class="intro">
+            <div class="intro-text">
+                <h2>Hello, I'm Java Full Stack Developer</h2>
+                <h3>Freelancer</h3>
+                <p>Crafting seamless solutions from front-end elegance to back-end brilliance.</p>
+                <div class="buttons">
+                    <button class="hire-me"><a href="/hireme">Hire Me</a></button>
+                    <button class="resume"><a href="pdf/Nishant.Resume.pdf">Resume</a></button>
+                </div>
+                 <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nishant-ingawale-a1902422a/"><img src="icons/linkedin.webp" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/mr_nishant_1308/"><img src="icons/insta.jpg" alt="Instagram"></a>
+                    <a href="https://github.com/Nishant1321"><img src="icons/github.jpg" alt="GitHub"></a>
+                    <a href="https://www.facebook.com/nishant.ingawale/"><img src="icons/facebook.png" alt="Facebook"></a>
+                </div>
+            </div>
+            <div class="intro-image">
+                <img src="image/WhatsApp Image 2024-06-17 at 9.58.48 AM.jpeg" alt="Web Dev">
+            </div>
+        </section>
+    <div> 
+    <form th:action="@{/hirepagestatus}" th:object="${hirepage}" method="post">
+    
+               
+                <label for="title"> Title:</label>
+                <input type="text" id="title" name="title" th:field="*{title}" required placeholder="why are u hiring eg.Job & Freelancer">
+                <label for="complitiondate">Complition Date:</label>
+                <input type="date" id="complitiondate" name="complitiondate" th:field="*{complitiondate}" required placeholder="Enter complitiondate">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" th:field="*{email}" required placeholder="email">
+          <textarea id="description" name="description" rows="6" th:field="*{description}" required placeholder="description"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+    </div>
+    </main>
+    
+    <footer>
+        <h2>Contact Us</h2>
+        <ul>
+            <li>Email: <a href="mailto:nishantingawale13@gmail.com">nishantingawale13@gmail.com</a></li>
+            <li>Contact Number: 9359248942</li>
+        </ul>
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>
